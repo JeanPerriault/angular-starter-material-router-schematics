@@ -1,4 +1,57 @@
-# JuanchoWeb2
+# Angular Starter - Material, router and schematics
+
+
+## How to do that
+
+### Install npm and nodejs
+
+$ npm update -g
+
+$ npm -v
+6.4.1
+
+$ node -v
+v8.11.1
+
+$ npm ls --depth=0 -g
+$ npm i -g @angular/cli
+
+$ ng new starter
+
+$ cd starter
+
+$ ng add @angular/material
+
+Not enough, so add:
+$ npm i --save @angular/cdk @angular/animations
+
+Add "import { BrowserAnimationsModule } from '@angular/platform-browser/animations';" in app.module.ts
+
+$ vi angular.json
+
+
+$ ng generate @angular/material:material-nav --name navigation
+
+$ ng generate @angular/material:material-dashboard --name dashboard
+$ ng generate component stepper
+$ ng generate component expansion-panel
+
+Update navigation links in navigation components, routes in app.module.ts, update components with your content
+
+$ ng serve
+$ ng serve --prod
+
+$ ng build
+$ ng build --prod
+
+And you're done!
+Thx Angular Teams
+
+
+
+
+
+# Default README
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
@@ -25,3 +78,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+
+

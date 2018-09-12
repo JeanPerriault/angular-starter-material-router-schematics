@@ -1,0 +1,64 @@
+<mat-sidenav-container fullscreen class="sidenav-container">
+
+  <!-- Left menu -->
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list click="closeSidenav()">
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/stepper">Stepper</a>
+      <a mat-list-item routerLink="/expansion-panel">Expansion panel</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Content -->
+  <mat-sidenav-content>
+
+    <!-- Toolbar -->
+    <mat-toolbar color="primary">
+
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+<!--        *ngIf="isHandset$ | async">-->
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span>{{title}}</span>
+
+      <span class="example-spacer"></span>
+
+      <mat-icon class="example-icon">notifications</mat-icon>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+
+    </mat-toolbar>
+
+    <!-- Main content -->
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

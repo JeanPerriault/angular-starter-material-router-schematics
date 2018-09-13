@@ -2,13 +2,14 @@
 
 
 ## Live demo
-TODO
+http://jean-perriault.com/angular-starter/
 
 
-## How to build that
+## How I've built that
 
-### Install npm and nodejs
+### nodejs/npm
 
+```
 $ npm update -g
 
 $ npm -v
@@ -18,6 +19,11 @@ $ node -v
 v8.11.1
 
 $ npm ls --depth=0 -g
+```
+
+### angular cli, angular and angular material
+
+```
 $ npm i -g @angular/cli
 
 $ ng new starter
@@ -25,34 +31,58 @@ $ ng new starter
 $ cd starter
 
 $ ng add @angular/material
+```
 
 Not enough, so add:
+```
 $ npm i --save @angular/cdk @angular/animations
+```
 
 Add "import { BrowserAnimationsModule } from '@angular/platform-browser/animations';" in app.module.ts
 
+```
 $ vi angular.json
-
-
+```
+```
 $ ng generate @angular/material:material-nav --name navigation
 
 $ ng generate @angular/material:material-dashboard --name dashboard
 $ ng generate component stepper
 $ ng generate component expansion-panel
+```
 
 Update navigation links in navigation components, routes in app.module.ts, update components with your content
 
+
+```
 $ ng serve
 $ ng serve --prod
 
 $ ng build
 $ ng build --prod
+```
 
 And you're done!
+
+
+### Greetings
+
 Thx Angular Teams contributors
 Thx Github Teams and contributors
 Thx all ninja coders on stackoverflow and dev blogs
 
+
+## Next steps
+* Theme switcher (dark mode)
+* TBD
+
+
+## Known bugs
+* mat-sidenav strange error 500 in dev mode:
+```
+Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value: 'mat-drawer-shown: true'. Current value: 'mat-drawer-shown: false'
+```
+Looks like https://github.com/angular/material2/issues/12479
 
 
 ## Additional notes (default README from Angular CLI)
